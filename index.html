@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 1st Monthsary, Lyra Loveee! 💜</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #fdfcff 0%, #f5edff 50%, #ede3fc 100%);
+            overflow-x: hidden;
+            user-select: none;
+            margin: 0;
+            padding: 0;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(-20px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(105vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        .falling-heart {
+            position: fixed;
+            top: -30px;
+            z-index: 5;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(216, 180, 254, 0.1);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(168, 85, 247, 0.4);
+            border-radius: 10px;
+        }
+        
+        .lavender-border-left {
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 45px;
+            background: linear-gradient(90deg, rgba(216, 180, 254, 0.25), transparent);
+            pointer-events: none;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            overflow: hidden;
+        }
+        .lavender-border-right {
+            position: fixed;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 45px;
+            background: linear-gradient(270deg, rgba(216, 180, 254, 0.25), transparent);
+            pointer-events: none;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            overflow: hidden;
+        }
+        .lavender-stalk {
+            font-size: 1.4rem;
+            filter: drop-shadow(0 0 4px rgba(168, 85, 247, 0.4));
+            animation: sway 3s ease-in-out infinite alternate;
+        }
+        @keyframes sway {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
+    </style>
+</head>
+<body class="h-full text-slate-800 flex flex-col justify-between relative min-h-screen">
+
+    <div class="lavender-border-left hidden lg:flex">
+        <span class="lavender-stalk">💜🪻</span>
+        <span class="lavender-stalk" style="animation-delay: 0.4s;">🪻💜</span>
+        <span class="lavender-stalk" style="animation-delay: 0.8s;">💜🪻</span>
+        <span class="lavender-stalk" style="animation-delay: 1.2s;">🪻💜</span>
+        <span class="lavender-stalk" style="animation-delay: 1.6s;">💜🪻</span>
+        <span class="lavender-stalk" style="animation-delay: 2.0s;">🪻💜</span>
+    </div>
+    <div class="lavender-border-right hidden lg:flex">
+        <span class="lavender-stalk" style="animation-delay: 0.2s;">🪻💜</span>
+        <span class="lavender-stalk" style="animation-delay: 0.6s;">💜🪻</span>
+        <span class="lavender-stalk" style="animation-delay: 1.0s;">🪻💜</span>
+        <span class="lavender-stalk" style="animation-delay: 1.4s;">💜🪻</span>
+        <span class="lavender-stalk" style="animation-delay: 1.8s;">🪻💜</span>
+        <span class="lavender-stalk" style="animation-delay: 2.2s;">💜🪻</span>
+    </div>
+
+    <!-- Falling Purple Hearts Container -->
+    <div id="hearts-container"></div>
+
+    <div id="greeting-landing-page" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-br from-purple-950 via-purple-900 to-indigo-950 text-white p-6 cursor-pointer transition-all duration-700 text-center" onclick="openMailFromGreeting()">
+        <div class="space-y-6 max-w-lg mx-auto animate-pulse">
+            <div class="text-5xl md:text-7xl mb-2">💜🌾🌹</div>
+            <h1 class="font-serif text-3xl md:text-5xl font-bold tracking-wide text-purple-100">
+                Happy 1st Monthsary, Lyra Loveee!
+            </h1>
+            <p class="text-purple-200 text-sm md:text-base font-light tracking-wider">
+                A special moment dedicated just for you...
+            </p>
+            <div class="pt-6">
+                <span class="inline-block bg-white/10 backdrop-blur-md border border-purple-300/30 px-6 py-3 rounded-full text-xs md:text-sm font-medium text-purple-200 shadow-2xl hover:bg-white/20 transition-all">
+                    Click anywhere to open our letter 💌
+                </span>
+            </div>
+            <p class="text-xs text-purple-300/70 pt-2 font-serif italic">From Prince 🐱</p>
+        </div>
+    </div>
+
+    <!-- Top Pull-Down Handle / Indicator -->
+    <div id="pull-handle-container" class="w-full flex flex-col items-center pt-4 z-30 transition-all duration-300 cursor-pointer group hidden" onclick="toggleMail()">
+        <div class="bg-white/90 hover:bg-white border border-purple-300 px-6 py-2 rounded-full shadow-lg flex items-center gap-2 text-purple-800 text-xs md:text-sm font-semibold transition-all">
+            <span class="text-lg animate-bounce">💌</span>
+            <span id="pull-text">Pull down or click to read mail again</span>
+            <span class="text-purple-500 group-hover:translate-y-0.5 transition-transform">▼</span>
+        </div>
+    </div>
+
+    <div id="mail-modal" class="fixed inset-4 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-[680px] max-h-[85vh] z-40 bg-white/95 backdrop-blur-xl border-4 border-purple-300 p-5 md:p-8 rounded-3xl shadow-2xl transition-all duration-500 opacity-0 pointer-events-none scale-95 flex flex-col">
+        
+        <!-- Mail Header -->
+        <div class="flex items-center justify-between border-b border-purple-200 pb-3 mb-3">
+            <div class="flex items-center gap-1.5 text-lg md:text-xl">
+                <span title="Blue Rose">💙🌹</span>
+                <span title="Lavender">🪻💜</span>
+            </div>
+            <div class="text-center">
+                <p class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-purple-600">Special Monthsary Letter</p>
+                <h3 class="font-serif text-base md:text-lg font-bold text-purple-900">For My Lyra</h3>
+            </div>
+            <div class="flex items-center gap-1.5 text-lg md:text-xl">
+                <span title="Lavender">💜🪻</span>
+                <span title="Blue Rose">🌹💙</span>
+            </div>
+        </div>
+
+        <!-- Scrollable Letter Body -->
+        <div class="overflow-y-auto pr-2 my-2 space-y-4 font-sans text-slate-700 text-xs md:text-sm leading-relaxed flex-1">
+            <h1 class="font-serif text-xl md:text-2xl font-bold text-purple-900 text-center mb-4">
+                To you, my Lavender 💜
+            </h1>
+            
+            <p class="font-semibold text-purple-800">
+                Happy 1st Monthsary Lyra Loveee!
+            </p>
+            <p>
+                I just want to say how happy I am with you that we came this far. August 27, 2026, I always thought that, that day would just be another day for you and me, but you made it special for both you and me, the day you finally gave me your sweet yes.
+            </p>
+            <p>
+                I want you to know how much I appreciate you for taking such a huge risk for entering this stage of relationship with me, knowing that things are tight and risky for you about this, all the times we call even though we can't speak verbally much and relies on chats, how you can't post mydays with me on it or be a cover picture, ready to lie just to be with me, I acknowledge every risks you took and I just want to tell you how much I appreciate them, more than you know and more than how I can express it with words.
+            </p>
+            <p>
+                I want you to know that you are the best thing that ever happened to me, you make my darkest days bright, you brought colors to my gray life, you added sweetness to my bitter outlook of love, and you have changed and challenged my perspectives.
+            </p>
+            <p>
+                I know this message might sound cheesy but HAHAHAHA can't blame me loveee, super love kita and this message isn't just words, it's how much I want to express my love for you, so much that I always thrive to find every ways to do so, I don't know how to express it, kahit na busy tayo sometimes, we don't meet and hang out everyday, we don't go on dates much, trust me, I wanna make you feel loved in every possible way.
+            </p>
+            <p>
+                Kahit na may mga limitations tayo ngayon at hindi natin magawa lahat ng gusto nating gawin nang hayagan, gusto kong tandaan mo na proud na proud ako sayo. Hindi man madali ang sitwasyon natin, mas pinipili kitang intindihin araw-araw kasi alam kong worth it ka, ikaw ang pinaka-worth it na risk na ginawa ko sa buhay ko.
+            </p>
+            <p>
+                Looking back at our first month, sobrang dami ko nang napagtanto. Kahit sa simpleng chat lang tayo madalas nagkakausap, o kaya sa mga silent moments natin sa tawag, ikaw pa rin ang pahinga ko sa mundong ito. Sapat na sakin na kasama kita, na ikaw ang kausap ko sa simula at dulo ng araw ko.
+            </p>
+            <p>
+                As we step into our second month and beyond, gusto kong panghawakan mo na nandito lang ako para sayo, lalo na sa mga panahong mabigat ang paligid. Hindi man natin hawak ang mundo ngayon, hawak natin ang isa't isa, at para sakin, sobra-sobra na yon. Pikit mata kong haharapin ang kahit anong pagsubok basta't ikaw ang kasama ko.
+            </p>
+            <p class="font-medium text-purple-900 pt-2">
+                I love you so, so muchhh, I remain, as ever, devotedly yours, and I look forward to seeing you more than I ought. Happy 1st monthsary ulit satin! Let's conquer more months (and years!) ahead, unti-unti nating abutin lahat ng pangarap natin nang magkasama.
+            </p>
+            
+            <div class="pt-4 border-t border-purple-100 flex flex-col sm:flex-row justify-between items-center text-purple-900 font-serif font-semibold italic text-sm gap-2">
+                <span>From your ever loving Boyfriend, Prince 🐱</span>
+                <span class="text-lg">🌹💙🪻</span>
+            </div>
+        </div>
+
+        <!-- Done Reading Button -->
+        <button onclick="closeMailAndStartGallery()" class="w-full mt-3 py-3 px-6 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-purple-500/30 transition-all transform active:scale-95 flex items-center justify-center gap-2 shrink-0">
+            <span>Done Reading — Continue to Gallery</span>
+            <span class="text-base">✨</span>
+        </button>
+    </div>
+
+    <main id="main-gallery-section" class="flex-1 flex flex-col items-center justify-center px-4 py-8 max-w-4xl mx-auto w-full transition-all duration-700 opacity-0 pointer-events-none hidden">
+        
+        <!-- Gallery Header -->
+        <div id="gallery-header" class="text-center mb-6">
+            <h2 class="font-serif text-2xl md:text-4xl font-bold text-purple-900 mb-2">Our First Month of Memories</h2>
+            <p class="text-purple-700 text-xs md:text-base">Click 'Next' below to experience our special moments, Lyra 💜</p>
+        </div>
+
+        <!-- Initial Grid of 4 Photos with fallbacks and proper landscape/portrait classes -->
+        <div id="initial-grid" class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 w-full mb-6 transition-all duration-500">
+            <!-- Memory 1: Landscape -->
+            <div class="bg-white p-2.5 rounded-2xl shadow-md border-2 border-purple-200 transform -rotate-2 hover:rotate-0 transition-transform flex flex-col justify-between">
+                <div class="w-full h-28 md:h-36 rounded-xl overflow-hidden mb-2 bg-purple-50 flex items-center justify-center">
+                    <img src="love1.jpg" alt="Memory 1" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x300/e9d5ff/6b21a8?text=Landscape+Memory+1'">
+                </div>
+                <p class="text-[11px] text-center text-purple-800 font-medium">Memory 1</p>
+            </div>
+            <!-- Memory 2: Landscape -->
+            <div class="bg-white p-2.5 rounded-2xl shadow-md border-2 border-purple-200 transform rotate-2 hover:rotate-0 transition-transform flex flex-col justify-between">
+                <div class="w-full h-28 md:h-36 rounded-xl overflow-hidden mb-2 bg-purple-50 flex items-center justify-center">
+                    <img src="love2.jpg" alt="Memory 2" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x300/e9d5ff/6b21a8?text=Landscape+Memory+2'">
+                </div>
+                <p class="text-[11px] text-center text-purple-800 font-medium">Memory 2</p>
+            </div>
+            <!-- Memory 3: Portrait / Standard -->
+            <div class="bg-white p-2.5 rounded-2xl shadow-md border-2 border-purple-200 transform -rotate-1 hover:rotate-0 transition-transform flex flex-col justify-between">
+                <div class="w-full h-36 md:h-52 rounded-xl overflow-hidden mb-2 bg-purple-50 flex items-center justify-center">
+                    <img src="love3.jpg" alt="Memory 3" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x400/e9d5ff/6b21a8?text=Memory+3'">
+                </div>
+                <p class="text-[11px] text-center text-purple-800 font-medium">Memory 3</p>
+            </div>
+            <!-- Memory 4: Portrait / Standard -->
+            <div class="bg-white p-2.5 rounded-2xl shadow-md border-2 border-purple-200 transform rotate-1 hover:rotate-0 transition-transform flex flex-col justify-between">
+                <div class="w-full h-36 md:h-52 rounded-xl overflow-hidden mb-2 bg-purple-50 flex items-center justify-center">
+                    <img src="love4.jpg" alt="Memory 4" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x400/e9d5ff/6b21a8?text=Memory+4'">
+                </div>
+                <p class="text-[11px] text-center text-purple-800 font-medium">Memory 4</p>
+            </div>
+        </div>
+
+        <!-- Spotlight Active Card Container -->
+        <div id="spotlight-container" class="hidden flex-col items-center justify-center w-full max-w-md bg-white/90 backdrop-blur-md p-5 rounded-3xl shadow-2xl border-2 border-purple-200 mb-6 transition-all duration-500">
+            <div id="spotlight-image-wrapper" class="w-full h-64 md:h-72 rounded-2xl overflow-hidden shadow-inner mb-4 border border-purple-100">
+                <img id="spotlight-img" src="" alt="Memory Spotlight" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x500/e9d5ff/6b21a8?text=Lyra+and+Prince'">
+            </div>
+            <p id="spotlight-message" class="font-serif text-lg md:text-xl text-purple-900 text-center font-medium px-2"></p>
+        </div>
+
+        <!-- Final Love Statement -->
+        <div id="final-message-container" class="hidden flex-col items-center justify-center text-center py-8 w-full animate-fade-in">
+            <div class="text-4xl mb-3 animate-bounce">💜🐱🌹</div>
+            <h1 class="font-serif text-3xl md:text-4xl font-bold text-purple-900 mb-3">I love you, My Lyra!</h1>
+            <p class="text-purple-700 text-sm md:text-base max-w-md">Here's to our first month and all the beautiful months and years ahead of us!</p>
+        </div>
+
+        <!-- Gallery Controls -->
+        <div class="flex flex-wrap items-center justify-center gap-3 w-full">
+            <button id="next-memory-btn" onclick="nextMemoryStep()" class="py-3 px-6 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold text-sm rounded-2xl shadow-lg hover:shadow-purple-500/30 transition-all transform active:scale-95 flex items-center gap-2">
+                <span id="btn-text">Start Gallery Sequence</span>
+                <span class="text-base">➔</span>
+            </button>
+            <button onclick="toggleMail()" class="py-3 px-5 bg-white hover:bg-purple-50 text-purple-800 font-medium text-sm rounded-2xl shadow border border-purple-200 transition-all">
+                💌 Read Mail Again
+            </button>
+        </div>
+
+    </main>
+
+    <footer class="w-full bg-white/90 backdrop-blur-md border-t border-purple-200 py-3 px-4 shadow-lg z-30 mt-auto">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+            <div class="flex items-center gap-2">
+                <span class="text-red-500 text-lg animate-pulse">💖</span>
+                <div>
+                    <p class="text-[10px] uppercase tracking-wider font-bold text-purple-700">Together Since August 27, 2026</p>
+                    <p class="font-serif text-xs md:text-sm font-semibold text-purple-900">Our 1st Monthsary</p>
+                </div>
+            </div>
+            <!-- Live Time Grid -->
+            <div class="flex items-center gap-1.5 md:gap-2.5 text-xs font-semibold text-purple-900 bg-purple-50 px-3 py-1.5 rounded-xl border border-purple-100 shadow-inner">
+                <div class="flex flex-col items-center"><span id="months-count" class="text-sm md:text-base font-bold text-purple-700">0</span><span class="text-[9px] text-slate-500 uppercase">Months</span></div>
+                <span class="text-purple-300">:</span>
+                <div class="flex flex-col items-center"><span id="days-count" class="text-sm md:text-base font-bold text-purple-700">0</span><span class="text-[9px] text-slate-500 uppercase">Days</span></div>
+                <span class="text-purple-300">:</span>
+                <div class="flex flex-col items-center"><span id="hours-count" class="text-sm md:text-base font-bold text-purple-700">00</span><span class="text-[9px] text-slate-500 uppercase">Hours</span></div>
+                <span class="text-purple-300">:</span>
+                <div class="flex flex-col items-center"><span id="minutes-count" class="text-sm md:text-base font-bold text-purple-700">00</span><span class="text-[9px] text-slate-500 uppercase">Mins</span></div>
+                <span class="text-purple-300">:</span>
+                <div class="flex flex-col items-center"><span id="seconds-count" class="text-sm md:text-base font-bold text-purple-700">00</span><span class="text-[9px] text-slate-500 uppercase">Secs</span></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function createFallingHearts() {
+            const container = document.getElementById('hearts-container');
+            const heartSymbols = ['💜', '💖', '🤍', '🌸', '✨', '🪻'];
+            
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.className = 'falling-heart';
+                heart.innerHTML = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.fontSize = (Math.random() * 12 + 12) + 'px';
+                
+                const duration = Math.random() * 5 + 4;
+                heart.style.animationDuration = duration + 's';
+                
+                container.appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, duration * 1000);
+            }, 350);
+        }
+
+        function openMailFromGreeting() {
+            const greetingPage = document.getElementById('greeting-landing-page');
+            if (greetingPage) {
+                greetingPage.classList.add('opacity-0', 'pointer-events-none');
+                setTimeout(() => {
+                    greetingPage.style.display = 'none';
+                }, 700);
+            }
+
+            const pullHandle = document.getElementById('pull-handle-container');
+            if (pullHandle) {
+                pullHandle.classList.remove('hidden');
+            }
+
+            const modal = document.getElementById('mail-modal');
+            if (modal) {
+                modal.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
+                modal.classList.add('opacity-100', 'scale-100');
+            }
+            mailOpen = true;
+        }
+
+        let mailOpen = false;
+        function toggleMail() {
+            const modal = document.getElementById('mail-modal');
+            const pullText = document.getElementById('pull-text');
+            const gallery = document.getElementById('main-gallery-section');
+            
+            if (!modal) return;
+
+            if (mailOpen) {
+                modal.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+                modal.classList.remove('opacity-100', 'scale-100');
+                if (pullText) pullText.innerText = "Pull down or click to read mail again";
+                mailOpen = false;
+                
+                if (gallery) {
+                    gallery.classList.remove('opacity-0', 'pointer-events-none', 'hidden');
+                }
+            } else {
+                modal.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
+                modal.classList.add('opacity-100', 'scale-100');
+                if (pullText) pullText.innerText = "Close mail or click button inside when done";
+                mailOpen = true;
+            }
+        }
+
+        function closeMailAndStartGallery() {
+            const modal = document.getElementById('mail-modal');
+            const pullText = document.getElementById('pull-text');
+            if (modal) {
+                modal.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+                modal.classList.remove('opacity-100', 'scale-100');
+            }
+            if (pullText) pullText.innerText = "Pull down or click to read mail again";
+            mailOpen = false;
+
+            const gallery = document.getElementById('main-gallery-section');
+            if (gallery) {
+                gallery.classList.remove('opacity-0', 'pointer-events-none', 'hidden');
+            }
+        }
+
+        let currentStep = 0;
+        const memorySteps = [
+            {
+                img: "love1.jpg",
+                msg: "I find my every thought returning to you.",
+                isLandscape: true
+            },
+            {
+                img: "love2.jpg",
+                msg: "My affections are entirely yours.",
+                isLandscape: true
+            },
+            {
+                img: "love3.jpg",
+                msg: "In a crowded room, you will always be the person I will look for and will look into",
+                isLandscape: false
+            },
+            {
+                img: "love4.jpg",
+                msg: "I love you in every universe 💜",
+                isLandscape: false
+            }
+        ];
+
+        function nextMemoryStep() {
+            const initialGrid = document.getElementById('initial-grid');
+            const galleryHeader = document.getElementById('gallery-header');
+            const spotlightContainer = document.getElementById('spotlight-container');
+            const spotlightImgWrapper = document.getElementById('spotlight-image-wrapper');
+            const spotlightImg = document.getElementById('spotlight-img');
+            const spotlightMsg = document.getElementById('spotlight-message');
+            const btnText = document.getElementById('btn-text');
+            const finalContainer = document.getElementById('final-message-container');
+            const nextBtn = document.getElementById('next-memory-btn');
+
+            if (currentStep === 0) {
+                if (initialGrid) initialGrid.classList.add('hidden');
+                if (spotlightContainer) {
+                    spotlightContainer.classList.remove('hidden');
+                    spotlightContainer.classList.add('flex');
+                }
+            }
+
+            if (currentStep < memorySteps.length) {
+                const currentMemory = memorySteps[currentStep];
+                if (spotlightImg) spotlightImg.src = currentMemory.img;
+                if (spotlightImgWrapper) {
+                    if (currentMemory.isLandscape) {
+                        spotlightImgWrapper.className = "w-full h-52 md:h-60 rounded-2xl overflow-hidden shadow-inner mb-4 border border-purple-100 flex items-center justify-center bg-purple-50";
+                        spotlightImg.className = "w-full h-full object-cover";
+                    } else {
+                        spotlightImgWrapper.className = "w-full h-64 md:h-72 rounded-2xl overflow-hidden shadow-inner mb-4 border border-purple-100 flex items-center justify-center bg-purple-50";
+                        spotlightImg.className = "w-full h-full object-cover";
+                    }
+                }
+                if (spotlightMsg) spotlightMsg.innerText = currentMemory.msg;
+                currentStep++;
+                
+                if (btnText) {
+                    if (currentStep === memorySteps.length) {
+                        btnText.innerText = "See Final Surprise ✨";
+                    } else {
+                        btnText.innerText = "Next Memory ➔";
+                    }
+                }
+            } else if (currentStep === memorySteps.length) {
+                if (galleryHeader) {
+                    galleryHeader.classList.add('hidden');
+                }
+                if (spotlightContainer) {
+                    spotlightContainer.classList.add('hidden');
+                    spotlightContainer.classList.remove('flex');
+                }
+                if (finalContainer) {
+                    finalContainer.classList.remove('hidden');
+                    finalContainer.classList.add('flex');
+                }
+                if (nextBtn) nextBtn.style.display = 'none';
+            }
+        }
+
+        function updateCounter() {
+            const startDate = new Date('2026-08-27T00:00:00');
+            const now = new Date();
+            
+            let diff = now - startDate;
+            if (diff < 0) diff = 0;
+
+            const seconds = Math.floor((diff / 1000) % 60);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const months = Math.floor(days / 30.436875);
+            const remainingDays = Math.floor(days % 30.436875);
+
+            const mElem = document.getElementById('months-count');
+            const dElem = document.getElementById('days-count');
+            const hElem = document.getElementById('hours-count');
+            const minElem = document.getElementById('minutes-count');
+            const sElem = document.getElementById('seconds-count');
+
+            if (mElem) mElem.innerText = months;
+            if (dElem) dElem.innerText = remainingDays;
+            if (hElem) hElem.innerText = String(hours).padStart(2, '0');
+            if (minElem) minElem.innerText = String(minutes).padStart(2, '0');
+            if (sElem) sElem.innerText = String(seconds).padStart(2, '0');
+        }
+
+        window.onload = function() {
+            createFallingHearts();
+            setInterval(updateCounter, 1000);
+            updateCounter();
+        };
+    </script>
+</body>
+</html>
